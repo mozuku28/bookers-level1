@@ -1,5 +1,10 @@
 <body>
   <p id="notice"></p>
+  <% if flash[:notice] %>
+    <div class="flash" style="color: green;">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <p><strong>Title:</strong><%= @book.title %></p>
   <p><strong>Body:</strong><%= @book.body %></p>
   <%= link_to "Edit", edit_book_path(@book) %>
